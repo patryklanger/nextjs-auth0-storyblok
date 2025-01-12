@@ -7,13 +7,12 @@ import { initStoryblok, fetchStoryBySlug } from "@/lib/services";
 export interface BlogPageProps {
   params: {
     slug: string;
-    locale: string;
   };
 }
 
-const BlogPage = async ({ params }: BlogPageProps) => {
+const BlogPage = async ({ params: { slug } }: Readonly<BlogPageProps>) => {
   initStoryblok();
-  const story = await fetchStoryBySlug(params.slug, params.locale);
+  const story = await fetchStoryBySlug(slug);
 
   if (!story) {
     redirect("/");
