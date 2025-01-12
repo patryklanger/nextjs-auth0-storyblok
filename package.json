@@ -3,24 +3,41 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 3010",
+    "dev:https": "next dev --port 3010 --experimental-https",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "fetch-storyblok-components": "storyblok pull-components --path ./src/lib/models/storyblok/ --file-name storyblok --space",
+    "generate-storyblok-types": "storyblok generate-typescript-typedefs --sourceFilePaths=./src/lib/models/storyblok/components.storyblok.json --destinationFilePath ./src/lib/models/storyblok/StoryblokComponents.d.ts"
   },
   "dependencies": {
+    "@auth0/nextjs-auth0": "^3.5.0",
+    "@storyblok/react": "^3.0.10",
+    "clsx": "^2.1.1",
+    "jwt-decode": "^4.0.0",
+    "next": "14.2.17",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.17"
+    "storyblok-js-client": "^6.10.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
     "eslint": "^8",
-    "eslint-config-next": "14.2.17"
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-config-next": "14.2.17",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "postcss": "^8",
+    "prettier": "3.3.3",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }

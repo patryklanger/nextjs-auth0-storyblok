@@ -1,3 +1,70 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "ignorePatterns": ["StoryblokComponents.d.ts"],
+  "plugins": ["import"],
+  "rules": {
+    "import/no-unresolved": "error",
+    "import/named": "error",
+    "import/namespace": "error",
+    "import/default": "error",
+    "import/export": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": ["external", "index", "internal", "sibling", "parent", "builtin", "object", "type"],
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "group": "external",
+            "pattern": "@app/**",
+            "position": "after"
+          }
+        ],
+        "distinctGroup": false
+      }
+    ],
+    "indent": [1]
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": ["packages/*/tsconfig.json", "other-packages/*/tsconfig.json"]
+      }
+    }
+  },
+  "extends": ["next/core-web-vitals", "airbnb-base", "airbnb/rules/react", "airbnb-typescript", "plugin:prettier/recommended"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "overrides": [
+    {
+      "files": ["*.tsx", "*.ts"],
+      "rules": {
+        // "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/quotes": ["error", "double"],
+        "indent": ["off"],
+        "react/jsx-props-no-spreading": ["off"],
+        "react/require-default-props": ["off"],
+        "react/function-component-definition": ["error", { "namedComponents": ["arrow-function", "function-expression"] }],
+        "object-curly-newline": ["off"],
+        "max-len": ["error", 150],
+        "func-names": ["warn", "as-needed"],
+        "prettier/prettier": [
+          "error",
+          {
+            "arrowParens": "avoid"
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts"],
+      "rules": {
+        "import/prefer-default-export": ["off"]
+      }
+    }
+  ]
 }
