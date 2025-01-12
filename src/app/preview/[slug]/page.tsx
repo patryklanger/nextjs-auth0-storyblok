@@ -1,11 +1,11 @@
 import React from "react";
 import { notFound, redirect } from "next/navigation";
 import { StoryblokStory } from "@storyblok/react/rsc";
-
-import { validateStoryblokToken } from "@/lib/helpers/validateStoryblokToken";
-import { fetchStoryBySlug } from "@/lib/services/fetchSlugById";
-import StoryblokProvider from "@/providers/StoryblokProvider";
 import { getSession } from "@auth0/nextjs-auth0";
+
+import { validateStoryblokToken } from "@/lib/helpers";
+import { fetchStoryBySlug } from "@/lib/services";
+import StoryblokProvider from "@/providers/StoryblokProvider";
 
 export interface PreviewPageProps {
   params: {

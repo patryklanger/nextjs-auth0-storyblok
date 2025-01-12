@@ -8,6 +8,4 @@ const storyblokClient = new StoryblokClient({
   },
 });
 
-const initStoryblokClient = () => storyblokClient;
-
-export default initStoryblokClient;
+export const initStoryblokClient = () => storyblokClient;

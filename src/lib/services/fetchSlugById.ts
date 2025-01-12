@@ -2,7 +2,7 @@ import { getSession } from "@auth0/nextjs-auth0";
 import { notFound } from "next/navigation";
 import { ISbStoriesParams, ISbStoryData } from "storyblok-js-client";
 
-import initStoryblokClient from "./initStoryblokClient";
+import { initStoryblokClient } from "./initStoryblokClient";
 
 import { hasPermission } from "../helpers/hasPermission";
 

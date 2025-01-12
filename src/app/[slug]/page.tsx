@@ -2,8 +2,7 @@ import { StoryblokComponent } from "@storyblok/react";
 import React from "react";
 import { redirect } from "next/navigation";
 
-import { initStoryblok } from "@/lib/services/initStoryblok";
-import { fetchStoryBySlug } from "@/lib/services/fetchSlugById";
+import { initStoryblok, fetchStoryBySlug } from "@/lib/services";
 
 export interface BlogPageProps {
   params: {

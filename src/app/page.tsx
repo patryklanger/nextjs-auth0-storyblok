@@ -2,8 +2,7 @@ import React from "react";
 import { StoryblokComponent } from "@storyblok/react";
 import { notFound } from "next/navigation";
 
-import { initStoryblok } from "@/lib/services/initStoryblok";
-import { fetchStoryBySlug } from "@/lib/services/fetchSlugById";
+import { initStoryblok, fetchStoryBySlug } from "@/lib/services";
 
 const Home = async () => {
   initStoryblok();
