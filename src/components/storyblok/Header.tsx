@@ -7,8 +7,7 @@ interface IProps {
   blok: HeaderStoryblok;
 }
 
-const Header = ({ blok }: IProps) => {
-  const { content, className } = blok;
+const Header = ({ blok: { content, className, ...blok } }: IProps) => {
   return (
     <h1
       {...storyblokEditable(blok)}

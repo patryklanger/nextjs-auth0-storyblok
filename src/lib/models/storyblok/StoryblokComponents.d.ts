@@ -10,8 +10,18 @@ export interface HeaderStoryblok {
 }
 
 export interface PageStoryblok {
-  body?: (HeaderStoryblok | PageStoryblok)[];
+  body?: (HeaderStoryblok | PageStoryblok | ProjectStoryblok)[];
+  permissions?: (number | string)[];
   component: "page";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface ProjectStoryblok {
+  title: string;
+  date: string;
+  description: string;
+  component: "project";
   _uid: string;
   [k: string]: any;
 }

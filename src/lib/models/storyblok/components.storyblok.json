@@ -40,12 +40,20 @@
       "display_name": null,
       "description": null,
       "created_at": "2025-01-11T18:49:37.718Z",
-      "updated_at": "2025-01-11T18:49:37.718Z",
+      "updated_at": "2025-01-11T19:27:13.276Z",
       "id": 6780681,
       "schema": {
         "body": {
           "type": "bloks",
           "id": "2ReWjoBcRtet1YR8EW_ZuA"
+        },
+        "permissions": {
+          "type": "options",
+          "pos": 1,
+          "use_uuid": true,
+          "source": "internal",
+          "datasource_slug": "permissions",
+          "id": "3tu48CbZQ-yIkderzIDa-A"
         }
       },
       "image": null,
@@ -62,6 +70,49 @@
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null
+    },
+    {
+      "name": "project",
+      "display_name": null,
+      "description": null,
+      "created_at": "2025-01-12T12:57:47.454Z",
+      "updated_at": "2025-01-12T12:59:35.562Z",
+      "id": 6782518,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "id": "KA0_JT4BSiqiZGJihlW4Hw",
+          "required": true
+        },
+        "date": {
+          "type": "datetime",
+          "pos": 1,
+          "id": "5vKl9jhsRoaAr4V3oob2Sw",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "pos": 2,
+          "id": "AqucMCucQ-WYqp3zu8GJ-g",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "project",
+      "component_group_uuid": "all",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
     }
   ],
   "component_groups": []

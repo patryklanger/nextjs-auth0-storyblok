@@ -7,14 +7,14 @@ interface IProps {
   blok: PageStoryblok;
 }
 
-const DefaultPage = ({ blok }: IProps) => {
+const DefaultPage = ({ blok: { body, ...blok } }: IProps) => {
   return (
     <main
       {...storyblokEditable(blok)}
       className="px-4"
     >
-      {blok.body
-        ? blok.body.map(b => (
+      {body
+        ? body.map(b => (
             <StoryblokComponent
               blok={b}
               // eslint-disable-next-line no-underscore-dangle
