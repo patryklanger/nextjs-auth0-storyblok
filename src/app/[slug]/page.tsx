@@ -11,12 +11,13 @@ export interface BlogPageProps {
 }
 
 const BlogPage = async ({ params: { slug } }: Readonly<BlogPageProps>) => {
-  initStoryblok();
   const story = await fetchStoryBySlug(slug);
 
   if (!story) {
     redirect("/");
   }
+
+  initStoryblok();
 
   return <StoryblokComponent blok={story.content} />;
 };
